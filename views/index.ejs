@@ -1,0 +1,82 @@
+<%- include('./common/header.ejs')%>
+
+
+  <div class="container  ">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 bg-danger">
+        <h2 class="text-center "> ADD DATA</h2>
+        <form method="post">
+          <div class="mb-3 ">
+            <label for="exampleFormControlInput1" class="form-label">NAME</label>
+            <input type="text" class="form-control " name="name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">AGE</label>
+            <input type="number" class="form-control" name="age">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">CITY</label>
+            <input type="text" class="form-control" name="city">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 p-3 bg-secondary ">
+        <h2 class="text-center text-white ">SHOW DATA</h2>
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NAME</th>
+              <th scope="col">AGE</th>
+              <th scope="col">CITY</th>
+              <th scope="col">ACTION</th>
+            </tr>
+          </thead>
+          <% var i=1%>
+            <% data.forEach((item)=>{%>
+
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <%= i++ %>
+                  </th>
+                  <td>
+                    <%= item.name %>
+                  </td>
+                  <td>
+                    <%= item.age %>
+                  </td>
+                  <td>
+                    <%=item.city %>
+                  </td>
+                  <td>
+                    <form action="/update/<%= item._id%>" method="get"><button><span
+                          class="fa fa-edit"></span></button></form>
+                    <form action="/delete/<%= item._id%>" method="post"><button><span
+                          class="fa fa-trash"></span></button></form>
+
+                  </td>
+                </tr>
+              </tbody>
+              <%})%>
+        </table>
+      </div>
+
+
+    </div>
+    <marquee behavior="alternate" scrollamount="10">
+      <div class="foot">YOU CAN CREATE , READ , UPDATE AND DELETE ANY USER'S INFORMATION</div>
+    </marquee>
+    <h2 class="text-white text-center" style="font-family: cursive;">&copy; copyright-2023 management app </h2>
+  </div>
+
+
+
+
+
+
+
+  <%- include('./common/footer.ejs')%>

@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    height: 565px;
+    background: rgb(0, 0, 5);
+}
+.heading{
+    height: 100px;
+    font-size: 40px;
+    text-decoration: underline;
+}
+.navbar a{
+   font-size: 30px;
+   font-family: cursive;
+   margin-left: 20px;
+}
+.collapse ul a{
+    padding-left: 5px ;
+    margin-left: 70px;
+    
+    font-family: cursive;
+    font-size:20px;
+}
+.foot{
+    color: aliceblue;
+    font-size:30px;
+ 
+    font-family: cursive;
+    margin:0 100px;
+    padding: 50px;
+}
+
+.update{
+    margin-left: 300px;
+}
+
+.table button span{
+    display: inline-block;
+}
